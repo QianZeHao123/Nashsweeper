@@ -32,7 +32,7 @@ export default {
         msg: String
     },
     methods: {
-        // 开始计时
+        // start counting
         // startHandler() {
         //     this.flag = setInterval(() => {
         //         if (this.second === 60 || this.second === '60') {
@@ -69,7 +69,7 @@ export default {
 
         //     }, 100)
         // },
-        // 暂停计时
+        // stop counting
         // endHandler() {
         //     this.flag = clearInterval(this.flag)
         // },
