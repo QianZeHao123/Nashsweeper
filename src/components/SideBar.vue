@@ -5,7 +5,7 @@
                 <div class="h-32">
                     <div class="grid grid-cols-4 gap-1 h-15 p-3">
                         <div class="col-span-3 card-title">Nashsweeper</div>
-                        <button class="col-span-1 btn btn-sm">🔙</button>
+                        <button class="col-span-1 btn btn-sm">⇦</button>
                     </div>
 
                     <div class="flex justify-center items-center p-2">
