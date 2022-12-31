@@ -4,7 +4,7 @@
             <div class="w-full border-4">
                 <div class="h-32">
                     <div class="grid grid-cols-4 gap-1 h-15 p-3">
-                        <div class="col-span-3 card-title">Nashswepper</div>
+                        <div class="col-span-3 card-title">Nashsweeper</div>
                         <button class="col-span-1 btn btn-sm">🔙</button>
                     </div>
 
@@ -16,24 +16,34 @@
                         </div>
                     </div>
                 </div>
-                <div class="flex justify-center items-center h-48 border-4">Part A</div>
+                <div class="flex justify-center items-center h-48 border-4">
+                    <PartA />
+                </div>
                 <div class="flex justify-center items-center h-10">
                     <button class="btn btn-sm btn-circle w-11/12 p-1">Solution</button>
                 </div>
-                <div class="flex justify-center items-center h-56 border-4">Part B</div>
+                <div class="flex justify-center items-center h-56 border-4">
+                    <PartB />
+                </div>
                 <div class="flex justify-center items-center h-10">
                     <button class="btn btn-sm btn-circle w-11/12 p-1">Solution Explorer</button>
                 </div>
-                <div class="flex justify-center items-center h-64 border-4">Part C</div>
+                <div class="flex justify-center items-center h-64 border-4">
+                    <PartC />
+                </div>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+import PartA from "./PartA.vue"
+import PartB from "./PartB.vue"
+import PartC from "./PartC.vue"
+
 export default {
     name: "SideBar",
-    components: {},
+    components: { PartA, PartB, PartC },
     data() {
         return {}
     },
