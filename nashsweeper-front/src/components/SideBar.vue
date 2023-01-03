@@ -16,19 +16,19 @@
                         </div>
                     </div>
                 </div>
-                <div class="flex justify-center items-center h-48 border-4">
+                <div class="flex justify-center items-center h-60 border-4">
                     <PartA />
                 </div>
-                <div class="flex justify-center items-center h-10">
+                <div class="flex justify-center items-center h-12">
                     <button class="btn btn-sm btn-circle w-11/12 p-1">Solution</button>
                 </div>
                 <div class="flex justify-center items-center h-56 border-4">
                     <PartB />
                 </div>
-                <div class="flex justify-center items-center h-10">
+                <div class="flex justify-center items-center h-12">
                     <button class="btn btn-sm btn-circle w-11/12 p-1">Solution Explorer</button>
                 </div>
-                <div class="flex justify-center items-center h-64 border-4">
+                <div class="flex justify-center items-center h-72 border-4">
                     <PartC />
                 </div>
             </div>
