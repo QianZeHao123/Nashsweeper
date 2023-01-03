@@ -8,13 +8,13 @@
             <div class="flex justify-center items-center row-span-2 border-4">
                 <PartE />
             </div>
-            <div class="flex justify-center items-center h-72 border-4">
+            <div class="flex justify-center items-center h-80 border-4">
                 <PartC_1 />
             </div>
-            <div class="flex justify-center items-center h-72 border-4">
+            <div class="flex justify-center items-center h-80 border-4">
                 <PartC_2 />
             </div>
-            <div class="flex justify-center items-center h-72 border-4">
+            <div class="flex justify-center items-center h-80 border-4">
                 <PartC_3 />
             </div>
         </div>
