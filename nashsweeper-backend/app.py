@@ -32,7 +32,7 @@ def upload_file():
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             file_url = url_for('uploaded_file', filename=filename)
             # return render_template('FileUpload.html') + '<br><img src=' + file_url + '>'
-            return render_template('FileUpload.html') + 'File Upload Success'
+            return render_template('GoBack.html')
     return render_template('FileUpload.html')
 
 
