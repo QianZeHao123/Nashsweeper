@@ -1,15 +1,25 @@
 <template>
     <div>
-        <h1 class="border">Part-E</h1>
+        <ProjLink />
+        <PlayerRate />
     </div>
 </template>
 
 <script>
+import ProjLink from './PartE_COM/ProjLink.vue'
+import PlayerRate from './PartE_COM/PlayerRate.vue'
+
+
 export default {
     name: "PartE",
-    components: {},
+    components: {
+        ProjLink,
+        PlayerRate,
+    },
     data() {
-        return {}
+        return {
+
+        }
     },
     methods: {},
     mounted() { },
