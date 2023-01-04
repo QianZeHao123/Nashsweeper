@@ -9,3 +9,11 @@ Nash equilibrium is a core concept of game theory. This repo shows a playful int
 ### In Docker Micro-service mode
 Coming soon!
 ## 0x02 Software Architecture
+```mermaid
+graph LR
+    A[Start] --> B{Is it?};
+    B -- Yes --> C[OK];
+    C --> D[Rethink];
+    D --> B;
+    B -- No ----> E[End];
+```
