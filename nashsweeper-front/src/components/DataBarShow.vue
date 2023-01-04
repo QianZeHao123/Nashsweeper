@@ -5,7 +5,7 @@
             <div class="flex justify-center items-center row-span-2 col-span-2 border-4">
                 <PartD />
             </div>
-            <div class="flex justify-center items-center row-span-2 border-4">
+            <div class="row-span-2 border-4">
                 <PartE />
             </div>
             <div class="flex justify-center items-center h-80 border-4">
