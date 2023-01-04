@@ -24,6 +24,21 @@ DataBarShow--PlayerInfo-->PartC-1[Part C-1]
 DataBarShow--BestChoice-->PartC-2[Part C-2]
 DataBarShow--StrategyScore-->PartC-3[Part C-3]
 PartB--TimeCom-->TimeCounterCom
-PartE--TimeCom-->PlayerRate
+PartE--GetPlayerRank-->PlayerRate
 PartE--Gitee, Github Link-->ProjLink
+```
+
+### Backend DataProcess
+```mermaid
+sequenceDiagram
+    participant Backend Server
+    participant Frontend
+    participant NashsweeperPlayer
+    NashsweeperPlayer -->> Backend Server: Upload Game Data
+    Backend Server ->> NashsweeperPlayer: Template Render Page: Return Nashsweeper
+    loop Load Tricker
+        Backend Server -->> Backend Server: Load Game Data
+    end
+    Backend Server ->> Frontend: JsonData: Player Rank
+    Frontend -->> NashsweeperPlayer: Player Rank
 ```
