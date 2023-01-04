@@ -9,11 +9,21 @@ Nash equilibrium is a core concept of game theory. This repo shows a playful int
 ### In Docker Micro-service mode
 Coming soon!
 ## 0x02 Software Architecture
+### Frontend User Interface Render
 ```mermaid
 graph LR
-    A[Start] --> B{Is it?};
-    B -- Yes --> C[OK];
-    C --> D[Rethink];
-    D --> B;
-    B -- No ----> E[End];
+App[App.vue]--Router.js-->HomePage(HomePage)
+HomePage-->SideBar(SideBar)
+HomePage-->DataBarShow(DataBarShow)
+SideBar--VueComponent-->PartA[PartA]
+SideBar--VueComponent-->PartB[PartB]
+SideBar--VueComponent-->PartC[PartC]
+DataBarShow--VueComponent-->PartD[PartD]
+DataBarShow--VueComponent-->PartE[PartE]
+DataBarShow--PlayerInfo-->PartC-1[Part C-1]
+DataBarShow--BestChoice-->PartC-2[Part C-2]
+DataBarShow--StrategyScore-->PartC-3[Part C-3]
+PartB--TimeCom-->TimeCounterCom
+PartE--TimeCom-->PlayerRate
+PartE--Gitee, Github Link-->ProjLink
 ```
