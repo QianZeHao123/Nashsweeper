@@ -28,7 +28,7 @@
                 <div class="flex justify-center items-center h-12">
                     <button class="btn btn-sm btn-circle w-11/12 p-1">Solution Explorer</button>
                 </div>
-                <div class="flex justify-center items-center h-72 border-4">
+                <div class="h-72 border-4">
                     <PartC />
                 </div>
             </div>
