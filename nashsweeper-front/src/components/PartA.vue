@@ -33,7 +33,7 @@
             <div class="flex justify-center items-center">
                 <div class="grid grid-cols-2 gap-3 h-1/4">
                     <div><a class="flex justify-center items-center btn btn-sm px-8"
-                            href="http://127.0.0.1:6778/uploadfile">Load Data</a></div>
+                            href="http://127.0.0.1:5000/UploadPage/uploadfile">Load Data</a></div>
                     <div><button class="flex justify-center items-center btn btn-sm px-8">Export Data</button></div>
                 </div>
             </div>
