@@ -14,10 +14,18 @@
             </thead>
             <tbody>
                 <tr v-for="Player in PlayerInfo" v-bind:key="Player">
-                    <td class="border">{{ Player.index }}</td>
-                    <td class="border">{{ Player.PlayerID }}</td>
-                    <td class="border">{{ Player.TotalStrategies }}</td>
-                    <td class="border">{{ Player.Time }}</td>
+                    <td class="border">
+                        <div class="flex justify-center items-center"> {{ Player.index }}</div>
+                    </td>
+                    <td class="border">
+                        <div class="flex justify-center items-center"> {{ Player.PlayerID }}</div>
+                    </td>
+                    <td class="border">
+                        <div class="flex justify-center items-center"> {{ Player.TotalStrategies }}</div>
+                    </td>
+                    <td class="border">
+                        <div class="flex justify-center items-center"> {{ Player.Time }}</div>
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -27,8 +35,10 @@
     </div>
     <div class="flex justify-center items-center">
         <div class="grid grid-cols-2 gap-3 h-1/4">
-            <div><a class="flex justify-center items-center btn btn-sm px-8"
-                    href="http://127.0.0.1:6778/uploadfile">Request Data</a></div>
+            <div>
+                <a class="flex justify-center items-center btn btn-sm px-8"
+                    href="http://127.0.0.1:6778/uploadfile">Request</a>
+            </div>
             <div><button class="flex justify-center items-center btn btn-sm px-8">Play Again</button></div>
         </div>
     </div>
@@ -42,7 +52,7 @@ export default {
     data() {
         return {
             PlayerInfo: [
-                { index: 1, PlayerID: "TestNumber", TotalStrategies: 64, Time: 200 },
+                { index: 'Link', PlayerID: "To", TotalStrategies: 'Backend', Time: 'Fail' },
             ],
         }
     },
@@ -51,7 +61,7 @@ export default {
             var that = this;
             axios({
                 method: 'get',
-                url: '/backend/userrank'
+                url: '/GetUserData/test'
             })
                 .then(function (response) {
                     // 处理成功情况
