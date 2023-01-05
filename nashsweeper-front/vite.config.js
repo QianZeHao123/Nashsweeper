@@ -7,11 +7,20 @@ export default defineConfig({
   server: {
     // port: 1234,
     proxy: {
-      "/backend": {
-        target: "http://127.0.0.1:6778",
+      // UploadPage CORS
+      "/UploadPage": {
+        target: "http://127.0.0.1:5000",
         changeOrigin: true,
         pathRewrite: {
-          "^/backend": "/backend",
+          "^/UploadPage": "/UploadPage",
+        },
+      },
+      // GetUserData CORS
+      "/GetUserData": {
+        target: "http://127.0.0.1:5000",
+        changeOrigin: true,
+        pathRewrite: {
+          "^/GetUserData": "/GetUserData",
         },
       },
     },
