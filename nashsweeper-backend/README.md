@@ -15,10 +15,29 @@ $ conda activate nashsweeper
 # install pip dependencies
 $ pip install -r requirements.txt
 ```
-### Run Backend Server
+### Run Backend Server (Linux and Mac OS)
 ```bash
-# conda env(nashsweeper)
-$ python app.py
+# make sure conda env is nashsweeper
+# cd /path/to/nashsweeper-backend
+# set flask environment variables
+$ export FLASK_DEBUG=True
+$ export FLASK_APP=src
+# initialize database
+$ flask init-db
+# Run!
+$ flask run
+```
+### Run Backend Server (Windows OS)
+```bash
+# make sure conda env is nashsweeper
+# cd /path/to/nashsweeper-backend
+# set flask environment variables
+$ set FLASK_DEBUG=True
+$ set FLASK_APP=src
+# initialize database
+$ flask init-db
+# Run!
+$ flask run
 ```
 ## 0x02 Docker Deployment
 Coming soon!
