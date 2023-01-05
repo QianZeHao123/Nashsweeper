@@ -1,5 +1,8 @@
 import os
 from flask import Flask
+import src.db as db
+import src.UploadPage as UploadPage
+import src.GetUserData as GetUserData
 
 
 def create_app(test_config=None):
@@ -27,7 +30,13 @@ def create_app(test_config=None):
     def hello():
         return 'Hello, World!'
 
-    from . import db
+    # ------------------------------------------------------------------------------
+    # from . import db
     db.init_app(app)
+
+    # from . import UploadPage
+    app.register_blueprint(UploadPage.bp)
+    # from . import GetUserData
+    app.register_blueprint(GetUserData.bp)
 
     return app
