@@ -9,13 +9,13 @@ JavaScript Framework to create component with logic and template.
 ### Install Node.js firstly
 You can install Node.js and npm through [https://nodejs.org/en/](https://nodejs.org/en/). In this project, node version must be 18.12.1 and above.
 ### Install npm dependencies
-```bash
+```shell
 # With Taobao Image Acceleration
 $ npm config set registry http://registry.npmmirror.com
 $ npm install
 ```
 ### Run dev and build front-end project
-```bash
+```shell
 # dev mode
 $ npm run dev
 # build the project
@@ -24,4 +24,41 @@ $ npm run build
 $ npm run preview
 ```
 ## 0x02 Docker Deployment
-Coming soon!
+### Dockerfile(run: npm run build first)
+```docker
+FROM node:latest
+COPY package.json /
+RUN npm i --registry=https://registry.npm.taobao.org
+RUN npm run build
+
+FROM nginx:latest
+# 这里的dist/目录是你的项目打包后的文件目录
+COPY ./dist/ /usr/share/nginx/html/
+COPY ./nginx.conf /etc/nginx/conf.d/
+
+EXPOSE 80
+```
+nginx.conf
+```nginx
+server {
+    listen 80 default_server;
+    server_name _;
+
+    location / {
+      root   /usr/share/nginx/html/web;
+      index  index.html index.htm;
+      try_files $uri $uri/ /index.html;
+    }
+
+    # 接口代理示例
+    # location /api {
+    #     proxy_pass http://xxx.com;
+    #     proxy_set_header Host $host:$server_port;
+    #     proxy_set_header X-Real-IP $remote_addr;
+        #     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    #     proxy_set_header Cookie $http_cookie;
+    #     proxy_buffering off;
+    #     proxy_cache off;
+    # }
+  }
+```
