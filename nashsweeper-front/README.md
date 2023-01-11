@@ -24,7 +24,7 @@ $ npm run build
 $ npm run preview
 ```
 ## 0x02 Docker Deployment
-### Dockerfile(run: npm run build first)
+### Dockerfile (run: *npm run build* first)
 ```docker
 FROM node:latest
 COPY package.json /
@@ -38,7 +38,7 @@ COPY ./nginx.conf /etc/nginx/conf.d/
 
 EXPOSE 80
 ```
-nginx.conf
+### nginx.conf
 ```nginx
 server {
     listen 80 default_server;
