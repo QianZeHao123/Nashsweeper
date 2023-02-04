@@ -24,41 +24,7 @@ $ npm run build
 $ npm run preview
 ```
 ## 0x02 Docker Deployment
-### Dockerfile (run: *npm run build* first)
-```docker
-FROM node:latest
-COPY package.json /
-RUN npm i --registry=https://registry.npm.taobao.org
-RUN npm run build
-
-FROM nginx:latest
-# 这里的dist/目录是你的项目打包后的文件目录
-COPY ./dist/ /usr/share/nginx/html/
-COPY ./nginx.conf /etc/nginx/conf.d/
-
-EXPOSE 80
-```
-### nginx.conf
-```nginx
-server {
-    listen 80 default_server;
-    server_name _;
-
-    location / {
-      root   /usr/share/nginx/html/web;
-      index  index.html index.htm;
-      try_files $uri $uri/ /index.html;
-    }
-
-    # 接口代理示例
-    # location /api {
-    #     proxy_pass http://xxx.com;
-    #     proxy_set_header Host $host:$server_port;
-    #     proxy_set_header X-Real-IP $remote_addr;
-        #     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-    #     proxy_set_header Cookie $http_cookie;
-    #     proxy_buffering off;
-    #     proxy_cache off;
-    # }
-  }
+```bash
+$ sudo docker build -t nashsweeper-frontend .
+$ sudo docker run --name nashsweeper-frontend -d -p 4173:4173 --link nashsweeper-backend nashsweeper-frontend:latest
 ```
