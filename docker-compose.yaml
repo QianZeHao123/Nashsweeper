@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+
+  frontend:
+    container_name: nashsweeper-frontend
+    build: ./nashsweeper-front
+    ports: 
+      - "4173:4173"
+    networks:
+      - nashsweeper_net
+    
+  backend:
+    container_name: nashsweeper-backend
+    build: ./nashsweeper-backend
+    ports: 
+      - "5000:5000"
+    networks:
+      - nashsweeper_net
+
+networks:
+  nashsweeper_net:
