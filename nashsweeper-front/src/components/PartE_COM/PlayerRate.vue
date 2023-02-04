@@ -37,7 +37,7 @@
         <div class="grid grid-cols-2 gap-3 h-1/4">
             <div>
                 <a class="flex justify-center items-center btn btn-sm px-8"
-                    href="http://127.0.0.1:6778/uploadfile">Request</a>
+                    href="http://127.0.0.1:5000/UploadPage/uploadfile">Request</a>
             </div>
             <div><button class="flex justify-center items-center btn btn-sm px-8">Play Again</button></div>
         </div>
