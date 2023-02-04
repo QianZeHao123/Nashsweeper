@@ -40,12 +40,7 @@ $ flask init-db
 $ flask run
 ```
 ## 0x02 Docker Deployment
-```docker
-FROM python:3.8.16-alpine3.17
-WORKDIR /app
-COPY requirements.txt requirements.txt
-RUN pip3 install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
-COPY . .
-ENV FLASK_APP=src
-CMD [ "flask", "run", "--host=0.0.0.0" ]
+```bash
+$ sudo docker build -t nashsweeper-backend . 
+$ sudo docker run --name nashsweeper-backend -d -p 5000:5000 nashsweeper-backend:latest
 ```
