@@ -5,6 +5,7 @@ services:
   frontend:
     container_name: nashsweeper-frontend
     build: ./nashsweeper-front
+    restart: always
     ports: 
       - "4173:4173"
     networks:
@@ -13,6 +14,7 @@ services:
   backend:
     container_name: nashsweeper-backend
     build: ./nashsweeper-backend
+    restart: always
     ports: 
       - "5000:5000"
     networks:
