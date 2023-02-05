@@ -9,7 +9,7 @@ export default defineConfig({
     proxy: {
       // UploadPage CORS
       "/UploadPage": {
-        target: "http://raspberrypi.local:5000",
+        target: "http://127.0.0.1:5000",
         changeOrigin: true,
         pathRewrite: {
           "^/UploadPage": "/UploadPage",
@@ -17,7 +17,7 @@ export default defineConfig({
       },
       // GetUserData CORS
       "/GetUserData": {
-        target: "http://raspberrypi.local:5000",
+        target: "http://127.0.0.1:5000",
         changeOrigin: true,
         pathRewrite: {
           "^/GetUserData": "/GetUserData",
