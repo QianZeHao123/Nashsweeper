@@ -20,6 +20,7 @@ $ pip install -r requirements.txt
 # make sure conda env is nashsweeper
 # cd /path/to/nashsweeper-backend
 # set flask environment variables
+# In Dev Mode
 $ export FLASK_DEBUG=True
 $ export FLASK_APP=src
 # initialize database
