@@ -5,7 +5,7 @@
     <div>
         <!-- <div class="border rounded-md p-2 bg-yellow-300" @click="startHandler()"> -->
         <div class="border rounded-md p-2" @click="onClickTimeCounter()">
-            Time counter: {{ hour }}:{{ minute }}:{{ second }}
+            Time counter: {{ time.hour }}:{{ time.minute }}:{{ time.second }}
         </div>
         <!-- </div> -->
     </div>
@@ -13,14 +13,22 @@
 
 <script>
 // import startHandler from './startHandler'
+import { NsStore } from '../../store/index.js'
+import { storeToRefs } from 'pinia'
 export default {
     name: "TimeCounter",
     comphournts: {},
     data() {
+        const store = NsStore()
+        const { time } = storeToRefs(store)
+
+        // const second = store.time.second
         return {
-            hour: '00',
-            minute: '00',
-            second: '00',
+            // hour: '00',
+            // hour,
+            // minute,
+            // second,
+            time,
             flag: null,
             second_counter: 0, // 秒的计数
             minute_counter: 0, // 分的计数
@@ -32,79 +40,38 @@ export default {
         msg: String
     },
     methods: {
-        // start counting
-        // startHandler() {
-        //     this.flag = setInterval(() => {
-        //         if (this.second === 60 || this.second === '60') {
-        //             this.second = '00';
-        //             this.second_counter = 0;
-        //             if (this.minute === 60 || this.minute === '60') {
-        //                 this.minute = '00';
-        //                 this.minute_counter = 0;
-        //                 if (this.hour_counter + 1 <= 9) {
-        //                     this.hour_counter++;
-        //                     this.hour = '0' + this.hour_counter;
-        //                 } else {
-        //                     this.hour_counter++;
-        //                     this.hour = this.hour_counter;
-        //                 }
-        //             } else {
-        //                 if (this.minute_counter + 1 <= 9) {
-        //                     this.minute_counter++;
-        //                     this.minute = '0' + this.minute_counter;
-        //                 } else {
-        //                     this.minute_counter++;
-        //                     this.minute = this.minute_counter;
-        //                 }
-        //             }
-        //         } else {
-        //             if (this.second_counter + 1 <= 9) {
-        //                 this.second_counter++;
-        //                 this.second = '0' + this.second_counter;
-        //             } else {
-        //                 this.second_counter++;
-        //                 this.second = this.second_counter;
-        //             }
-        //         }
-
-        //     }, 100)
-        // },
-        // stop counting
-        // endHandler() {
-        //     this.flag = clearInterval(this.flag)
-        // },
         onClickTimeCounter() {
             if (this.buttonValue == 0) {
                 this.flag = setInterval(() => {
-                    if (this.second === 60 || this.second === '60') {
-                        this.second = '00';
+                    if (this.time.second === 59 || this.time.second === '59') {
+                        this.time.second = '00';
                         this.second_counter = 0;
-                        if (this.minute === 60 || this.minute === '60') {
-                            this.minute = '00';
+                        if (this.time.minute === 59 || this.time.minute === '59') {
+                            this.time.minute = '00';
                             this.minute_counter = 0;
                             if (this.hour_counter + 1 <= 9) {
                                 this.hour_counter++;
-                                this.hour = '0' + this.hour_counter;
+                                this.time.hour = '0' + this.hour_counter;
                             } else {
                                 this.hour_counter++;
-                                this.hour = this.hour_counter;
+                                this.time.hour = this.hour_counter;
                             }
                         } else {
                             if (this.minute_counter + 1 <= 9) {
                                 this.minute_counter++;
-                                this.minute = '0' + this.minute_counter;
+                                this.time.minute = '0' + this.minute_counter;
                             } else {
                                 this.minute_counter++;
-                                this.minute = this.minute_counter;
+                                this.time.minute = this.minute_counter;
                             }
                         }
                     } else {
                         if (this.second_counter + 1 <= 9) {
                             this.second_counter++;
-                            this.second = '0' + this.second_counter;
+                            this.time.second = '0' + this.second_counter;
                         } else {
                             this.second_counter++;
-                            this.second = this.second_counter;
+                            this.time.second = this.second_counter;
                         }
                     }
 
@@ -121,6 +88,4 @@ export default {
 }
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
