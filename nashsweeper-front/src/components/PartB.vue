@@ -7,14 +7,15 @@
             </div>
             <div class="text-xl">
                 <!-- <div class="border rounded-md p-2 bg-blue-500">Nash equilibrium counter: 0</div> -->
-                <div class="border rounded-md p-2" v-on:click="increase_NEcounter()">Nash equilibrium counter: {{ NEcounter
-                }}
+                <div class="btn w-full h-full border rounded-md p-2" v-on:click="increase_NEcounter()">Nash equilibrium
+                    counter: {{ NEcounter }}
                 </div>
             </div>
             <div class="text-xl">
                 <!-- <div class="border rounded-md p-2 bg-green-500">Best response counter: 0</div> -->
-                <div class="border rounded-md p-2" v-on:click="increase_BestResponse()">Best response counter: {{
-                    BestResponse }}</div>
+                <div class="btn border rounded-md p-2 w-full h-full" v-on:click="increase_BestResponse()">
+                    Best response counter: {{ BestResponse }}
+                </div>
             </div>
         </div>
     </div>
