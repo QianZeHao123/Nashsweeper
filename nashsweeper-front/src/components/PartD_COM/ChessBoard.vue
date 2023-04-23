@@ -1,8 +1,7 @@
 <template>
   <div>
-    <table class="border-separate border ">
+    <!-- <table class="border-separate border ">
       <tbody>
-
         <tr>
           <td class="w-20 h-16 border">
             <div class="flex justify-center items-center">{{ chess_mock[0] }}</div>
@@ -214,13 +213,30 @@
           <td class="w-20 h-16 border">
             <div class="flex justify-center items-center">{{ chess_mock[62] }}</div>
           </td>
-          <td class="w-20 h-16 border">
+          <td class="w-20 h-16 border" v-bind:class="{ 'chessbtn-red': isred, 'chessbtn-blue': isblue }"
+            v-on:click="colorChange()">
             <div class="flex justify-center items-center">{{ chess_mock[63] }}</div>
           </td>
         </tr>
 
       </tbody>
+    </table> -->
+    <table>
+      <tr v-for="(row, index) in 8" :key="row">
+        <td v-for="(cell, cellIndex) in 8" :key="cell">
+          <div class="w-20 h-16 border flex justify-center items-center">
+            <div class="flex justify-center items-center"
+              v-bind:class="{ 'chessbtn-red': isred, 'chessbtn-blue': isblue }" v-on:click="colorChange()">
+              {{ chess_mock[cellIndex + index * 8] }}
+            </div>
+
+          </div>
+        </td>
+      </tr>
     </table>
+
+
+
   </div>
 </template>
 
@@ -230,6 +246,8 @@ export default {
   components: {},
   data() {
     return {
+      isred: false,
+      isblue: false,
       chess_mock: [[45, 87], [50, 65], [57, 20], [75, 1], [39, 21], [90, 43], [19, 85], [53, 82], [55, 83],
       [13, 45], [39, 1], [11, 16], [50, 33], [94, 36], [29, 73], [39, 91], [77, 49], [93, 43], [16, 67], [41, 47],
       [57, 35], [6, 17], [52, 57], [80, 13], [55, 89], [60, 94], [58, 39], [43, 47], [50, 91], [1, 92], [54, 79], [21, 92],
@@ -238,11 +256,28 @@ export default {
       [94, 2], [93, 34], [66, 93], [97, 87], [71, 93], [96, 84], [71, 97], [55, 84]],
     }
   },
-  methods: {},
+  methods: {
+    // colorChange: function () {
+    //   if (this.chess_mock[(index - 1) * 8 + (cellIndex - 1)][0] > this.chess_mock[(cellIndex - 1) + (index - 1) * 8][1]) {
+    //     console.log(this.chess_mock[63][0])
+    //     this.isred = true
+    //   }
+    //   else if (this.chess_mock[(index - 1) * 8 + (cellIndex - 1)][0] > this.chess_mock[(cellIndex - 1) + (index - 1) * 8][1]) {
+    //     console.log(this.chess_mock[63][1])
+    //     this.isblue = true
+    //   }
+    // },
+  },
   mounted() { },
 }
 </script>
 
 <style scoped>
+.chessbtn-blue {
+  background-color: blue;
+}
 
+.chessbtn-red {
+  background-color: red;
+}
 </style>
