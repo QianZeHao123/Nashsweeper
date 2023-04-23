@@ -7,11 +7,14 @@
             </div>
             <div class="text-xl">
                 <!-- <div class="border rounded-md p-2 bg-blue-500">Nash equilibrium counter: 0</div> -->
-                <div class="border rounded-md p-2">Nash equilibrium counter: 0</div>
+                <div class="border rounded-md p-2" v-on:click="increase_NEcounter()">Nash equilibrium counter: {{ NEcounter
+                }}
+                </div>
             </div>
             <div class="text-xl">
                 <!-- <div class="border rounded-md p-2 bg-green-500">Best response counter: 0</div> -->
-                <div class="border rounded-md p-2">Best response counter: 0</div>
+                <div class="border rounded-md p-2" v-on:click="increase_BestResponse()">Best response counter: {{
+                    BestResponse }}</div>
             </div>
         </div>
     </div>
@@ -19,17 +22,41 @@
 
 <script>
 import TimeCounter from './PartB_COM/TimeCounter.vue'
+import { NsStore } from '../store/index.js'
+import { storeToRefs } from 'pinia'
+
 export default {
     name: "PartB",
     components: { TimeCounter },
     data() {
-        return {}
+        const store = NsStore();
+        const { NEcounter, BestResponse } = storeToRefs(store)
+        return {
+            NEcounter,
+            BestResponse
+        }
     },
-    methods: {},
+    methods: {
+        increase_NEcounter: function () {
+            this.NEcounter += 2
+            console.log(this.NEcounter)
+        },
+        increase_BestResponse: function () {
+            this.BestResponse++
+            console.log(this.BestResponse)
+        }
+    },
     mounted() { },
 }
 </script>
 
-<style scoped>
+<!-- <script setup>
+import TimeCounter from './PartB_COM/TimeCounter.vue'
+import { useCounterStore } from '../store/index.js'
+import { storeToRefs } from 'pinia'
+const store = useCounterStore()
+const { count, double } = storeToRefs(store)
 
-</style>
+</script> -->
+
+<style scoped></style>
