@@ -19,7 +19,7 @@ export default {
         // const second = storeToRefs(store.time.second)
         return {
             time,
-            NEcounter
+            NEcounter,
         }
     },
     methods: {},
