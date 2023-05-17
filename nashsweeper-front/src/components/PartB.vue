@@ -14,7 +14,7 @@
             <div class="text-xl">
                 <!-- <div class="border rounded-md p-2 bg-green-500">Best response counter: 0</div> -->
                 <div class="btn border rounded-md p-2 w-full h-full" v-on:click="increase_BestResponse()">
-                    Best response counter: {{ BestResponse }}
+                    Best response counter: {{ BRcounter }}
                 </div>
             </div>
         </div>
@@ -31,10 +31,10 @@ export default {
     components: { TimeCounter },
     data() {
         const store = NsStore();
-        const { NEcounter, BestResponse } = storeToRefs(store)
+        const { NEcounter, BRcounter } = storeToRefs(store)
         return {
             NEcounter,
-            BestResponse
+            BRcounter
         }
     },
     methods: {
@@ -43,8 +43,8 @@ export default {
             console.log(this.NEcounter)
         },
         increase_BestResponse: function () {
-            this.BestResponse++
-            console.log(this.BestResponse)
+            this.BRcounter++
+            console.log(this.BRcounter)
         }
     },
     mounted() { },
