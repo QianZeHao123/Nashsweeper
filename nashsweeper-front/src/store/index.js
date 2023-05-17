@@ -12,7 +12,12 @@ export const NsStore = defineStore("NashSweeperStore", {
         minute: "00",
         second: "00",
       },
+      BRcounter: 0,
+      // Backend Return NE and BR number
+      NashEquilibrium: 0,
       BestResponse: 0,
+      NashEquilibrium_num: 0,
+      BestResponse_num: 0,
     };
   },
   // getters: {
