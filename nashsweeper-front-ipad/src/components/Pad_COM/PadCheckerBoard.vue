@@ -374,9 +374,9 @@ export default {
   components: {},
   data() {
     const store = NsStore();
-    const { NEcounter, BRcounter } = storeToRefs(store);
+    const { NEcounter, BRcounter, time } = storeToRefs(store);
     return {
-      NEcounter, BRcounter,
+      NEcounter, BRcounter, time,
       is0: [false, false, false], is1: [false, false, false], is2: [false, false, false], is3: [false, false, false], is4: [false, false, false], is5: [false, false, false], is6: [false, false, false], is7: [false, false, false],
       is8: [false, false, false], is9: [false, false, false], is10: [false, false, false], is11: [false, false, false], is12: [false, false, false], is13: [false, false, false], is14: [false, false, false], is15: [false, false, false],
       is16: [false, false, false], is17: [false, false, false], is18: [false, false, false], is19: [false, false, false], is20: [false, false, false], is21: [false, false, false], is22: [false, false, false], is23: [false, false, false],
@@ -655,7 +655,7 @@ export default {
     color50: function () {
       this.is48 = [true, false, false]
       this.is49 = [true, false, false]
-      this.is50 =[false, false, true]
+      this.is50 = [false, false, true]
       this.is51 = [true, false, false]
       this.is52 = [true, false, false]
       this.is53 = [true, false, false]
@@ -725,11 +725,24 @@ export default {
     color63: function () {
       this.is63 = [true, false, false]
     },
+    GameOver: function () {
+      if (this.NEcounter == 2) {
+        this.gameOverStr = "Game Over, you have found all the Nash Equilibrium and " + this.BRcounter + " Best Response, " + "You spent a total of " + +this.time.hour + ":" + this.time.minute + ":" + this.time.second;
+        alert(this.gameOverStr);
+      }
+    },
   },
-  mounted() { },
+  mounted() {
+    // execute every 1 s
+    this.timer = setInterval(() => {
+      this.GameOver()
+    }, 1000);
+  },
 }
 </script>
   
+
+
 <style scoped>
 .chessbtn-blue {
   background-color: rgb(50, 50, 219);
