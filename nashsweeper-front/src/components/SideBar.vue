@@ -4,15 +4,15 @@
             <div class="w-full border-4">
                 <div class="h-32">
                     <div class="grid grid-cols-4 gap-1 h-15 p-3">
-                        <div class="col-span-3 card-title">Nashsweeper</div>
-                        <button class="col-span-1 btn btn-sm">⇦</button>
+                        <div class="col-span-3 card-title">Nashsweeper (PC version)</div>
+                        <button class="col-span-1 btn btn-sm bg-slate-400">⇦</button>
                     </div>
 
                     <div class="flex justify-center items-center p-2">
                         <div class="btn-group">
                             <button class="btn btn-sm">Player</button>
-                            <button class="btn btn-sm">Strategy</button>
-                            <button class="btn btn-sm">Type</button>
+                            <button class="btn btn-sm bg-slate-400">Strategy</button>
+                            <button class="btn btn-sm bg-slate-400">Type</button>
                         </div>
                     </div>
                 </div>
