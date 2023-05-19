@@ -39,14 +39,14 @@ export default {
         }
     },
     methods: {
-        increase_NEcounter: function () {
-            this.NEcounter += 2
-            console.log(this.NEcounter)
-        },
-        increase_BestResponse: function () {
-            this.BRcounter++
-            console.log(this.BRcounter)
-        }
+        // increase_NEcounter: function () {
+        //     this.NEcounter += 2
+        //     console.log(this.NEcounter)
+        // },
+        // increase_BestResponse: function () {
+        //     this.BRcounter++
+        //     console.log(this.BRcounter)
+        // }
     },
     mounted() { },
 }
