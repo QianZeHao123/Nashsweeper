@@ -9,11 +9,6 @@ const router = createRouter({
       name: "Home",
       component: Home,
     },
-    {
-      path: "/PC",
-      name: "PC version",
-      component: Home,
-    },
   ],
 });
 
