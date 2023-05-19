@@ -7,17 +7,19 @@ export const NsStore = defineStore("NashSweeperStore", {
     // return count;
     return {
       NEcounter: 0,
+      BRcounter: 0,
       time: {
         hour: "00",
         minute: "00",
         second: "00",
       },
-      BRcounter: 0,
+      BestResponse: 0,
       // Backend Return NE and BR number
       NashEquilibrium: 0,
       BestResponse: 0,
       NashEquilibrium_num: 0,
-      BestResponse_num: 0,
+      BestResponse_num_left: 0,
+      BestResponse_num_right: 0,
     };
   },
   // getters: {
