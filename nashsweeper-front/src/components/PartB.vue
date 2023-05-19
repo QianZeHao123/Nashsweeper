@@ -1,19 +1,20 @@
 <template>
-    <div>
-        <div class="grid grid-rows-3 gap-x-4 gap-y-6 ">
+    <div class="w-5/6">
+        <!-- <div class="grid grid-rows-3 gap-x-4 gap-y-6 "> -->
+        <div class="grid grid-rows-3 gap-x-4 gap-y-6 w-full">
             <div class="text-xl">
                 <!-- <div class="border rounded-md p-2 bg-yellow-300">Time counter: 00::00::30</div> -->
                 <TimeCounter />
             </div>
-            <div class="text-xl">
+            <div class="text-xl w-full">
                 <!-- <div class="border rounded-md p-2 bg-blue-500">Nash equilibrium counter: 0</div> -->
-                <div class="btn w-full h-full border rounded-md p-2" v-on:click="increase_NEcounter()">Nash equilibrium
+                <div class="btn w-full h-full border rounded-md p-2 bg-blue-800">Nash equilibrium
                     counter: {{ NEcounter }}
                 </div>
             </div>
             <div class="text-xl">
                 <!-- <div class="border rounded-md p-2 bg-green-500">Best response counter: 0</div> -->
-                <div class="btn border rounded-md p-2 w-full h-full" v-on:click="increase_BestResponse()">
+                <div class="btn border rounded-md p-2 w-full h-full bg-green-800">
                     Best response counter: {{ BRcounter }}
                 </div>
             </div>
@@ -34,7 +35,7 @@ export default {
         const { NEcounter, BRcounter } = storeToRefs(store)
         return {
             NEcounter,
-            BRcounter
+            BRcounter,
         }
     },
     methods: {
@@ -43,8 +44,8 @@ export default {
             console.log(this.NEcounter)
         },
         increase_BestResponse: function () {
-            this.BRcounter++
-            console.log(this.BRcounter)
+            this.BestResponse++
+            console.log(this.BestResponse)
         }
     },
     mounted() { },
