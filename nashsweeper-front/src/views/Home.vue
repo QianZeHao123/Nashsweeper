@@ -23,11 +23,15 @@ export default {
     data() {
         return {}
     },
-    methods: {},
-    mounted() { },
+    methods: {
+        Alert_version: alert('For security reasons, this version does not connect to the backend.'),
+        Alert_connection: alert('Thank you for your understanding, the full version of the program is detailed at: https://gitee.com/qian_zehao/nashsweeper'),
+    },
+    mounted() {
+        // Alert_version(),
+        // Alert_connection(),
+    },
 }
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
