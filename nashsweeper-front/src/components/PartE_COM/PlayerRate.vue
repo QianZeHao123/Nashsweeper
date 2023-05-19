@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="text-xl flex justify-center items-center p-2">Rating of Nashsweeper players</div>
+        <div class="text-xl flex justify-center items-center p-2 text-red-400">Rating of Nashsweeper players</div>
     </div>
     <div class="overflow-auto h-96">
         <table class="table-fixed w-full border-collapse">
@@ -31,13 +31,13 @@
         </table>
     </div>
     <div>
-        <div class="text-xl flex justify-center items-center p-4">Request Data from Server</div>
+        <div class="text-xl flex justify-center items-center p-4 text-purple-400">Request Data from Server</div>
     </div>
     <div class="flex justify-center items-center">
         <div class="grid grid-cols-2 gap-3 h-1/4">
             <div>
                 <a class="flex justify-center items-center btn btn-sm px-8"
-                    href="http://127.0.0.1:5000/UploadPage/uploadfile">Request</a>
+                    href="http://198.74.121.61:803">Request</a>
             </div>
             <div><button class="flex justify-center items-center btn btn-sm px-8">Play Again</button></div>
         </div>
@@ -53,6 +53,7 @@ export default {
         return {
             PlayerInfo: [
                 { index: 'Link', PlayerID: "To", TotalStrategies: 'Backend', Time: 'Fail' },
+                { index: 'Check', PlayerID: "The", TotalStrategies: 'Server', Time: 'Again' },
             ],
         }
     },
