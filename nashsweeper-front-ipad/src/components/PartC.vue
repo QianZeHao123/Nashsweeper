@@ -9,7 +9,6 @@
                 <div class="collapse-content">
                     <div>Nash Equilibrium 1</div>
                     <div>Nash Equilibrium 2</div>
-                    <div>Nash Equilibrium 3</div>
                     <div>......</div>
                 </div>
             </div>
@@ -53,6 +52,4 @@ export default {
 }
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
