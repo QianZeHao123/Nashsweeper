@@ -4,7 +4,7 @@
 <template>
     <div>
         <!-- <div class="border rounded-md p-2 bg-yellow-300" @click="startHandler()"> -->
-        <div class="btn h-full w-full border rounded-md p-2" v-on:click="onClickTimeCounter()">
+        <div class="btn h-full w-full border rounded-md p-2 bg-yellow-500" v-on:click="onClickTimeCounter()">
             Time counter: {{ time.hour }}:{{ time.minute }}:{{ time.second }}
         </div>
         <!-- </div> -->
@@ -84,7 +84,9 @@ export default {
             }
         },
     },
-    mounted() { },
+    mounted() {
+        this.onClickTimeCounter()
+    },
 }
 </script>
 
