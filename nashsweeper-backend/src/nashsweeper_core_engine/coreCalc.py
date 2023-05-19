@@ -5,6 +5,7 @@
 
 from itertools import product
 import numpy
+import sqlite3
 # =================================================================
 
 # this part is used to generate id_lst.
@@ -40,11 +41,21 @@ def id_lst_gen(strategy_combination):
 # =================================================================
 
 
-# the following code is used to test unit
-if __name__ == "__main__":
-    # test_strategy_matrix = numpy.array()
-    # test_strategy_matrix = numpy.ones([3, 4, 5, 3])
 
+# =================================================================
+# this part is related to database
+def create_database(DBname, TBname, valst):
+    conn = sqlite3.connect(DBname)
+    cursor = conn.cursor()
+    cursor.execute('''CREATE TABLE IF NOT EXISTS UserStrategy(
+                id TEXT PRIMARY KEY,
+                strategy TEXT)''')
+    conn.commit()
+    conn.close()
+# =================================================================
+
+'''
+if __name__ == "__main__":
     test_strategy_matrix = [[76, 97], [72, 67], [25, 84], [73, 46], [93, 20], [12, 44], [68, 93], [20, 87], [43, 24],
                             [68, 44], [62, 97], [72, 66], [96, 16], [42, 3], [14, 44], [
                                 51, 37], [63, 40], [76, 86], [43, 66], [13, 63],
@@ -67,6 +78,5 @@ if __name__ == "__main__":
     id_lst = id_lst_gen(strategy_combination)
     print(id_lst)
     print(N)
-
-    for _ in range(len(id_lst)):
-        pass
+'''
+# the following code is used to test unit
