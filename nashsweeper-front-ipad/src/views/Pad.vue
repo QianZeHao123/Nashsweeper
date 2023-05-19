@@ -4,31 +4,34 @@
     <div class="grid grid-cols-4 border h-full w-full">
       <div class="border h-full">
         <!-- sidebar  -->
-
-        <div class="grid grid-cols-4 gap-1 h-15 p-3">
-          <div class="col-span-3 card-title">Nashsweeper</div>
-          <button class="col-span-1 btn btn-sm">⇦</button>
-        </div>
-
-        <div class="flex justify-center items-center border-4">
-          <select class="select w-11/12 max-w-xs">
-            <option disabled selected>Select your game types</option>
-            <option>Prisoner Dilemma</option>
-            <option>Battle of the Sexes</option>
-            <option>Zero-Sum</option>
-            <option>Random</option>
-          </select>
-        </div>
-        <div class="flex justify-center items-center p-3">
-          <div class="grid grid-cols-2 gap-3 h-1/4">
-            <div><a class="flex justify-center items-center btn btn-sm p-2"
-                href="http://127.0.0.1:5000/UploadPage/uploadfile">Load Data</a></div>
-            <div><button class="flex justify-center items-center btn btn-sm p-2">Export Data</button></div>
+        <div class="h-1/2 border">
+          <div class="grid grid-cols-4 gap-1 h-15 p-3">
+            <div class="col-span-4 card-title">Nashsweeper (Pad)</div>
+            <!-- <button class="col-span-1 btn btn-sm">⇦</button> -->
           </div>
-        </div>
 
-        <PartB />
-        <PartC />
+          <div class="flex justify-center items-center border-4">
+            <select class="select w-11/12 max-w-xs">
+              <option disabled selected>Select your game types</option>
+              <option>Prisoner Dilemma</option>
+              <option>Battle of the Sexes</option>
+              <option>Zero-Sum</option>
+              <option>Random</option>
+            </select>
+          </div>
+          <div class="flex justify-center items-center p-3">
+            <div class="grid grid-cols-2 gap-2 h-1/4">
+              <div><a class="flex justify-center items-center btn btn-sm"
+                  href="http://204.15.75.42:5000/UploadPage/uploadfile">Load Data</a></div>
+              <div><a class="flex justify-center items-center btn btn-sm w-full" href="http://198.74.121.61:803">Using Man</a></div>
+            </div>
+          </div>
+
+          <PartB />
+        </div>
+        <div class="h-1/2 overflow-auto">
+          <PartC />
+        </div>
       </div>
 
 
