@@ -3,14 +3,23 @@ version: '3'
 services:
 
   frontend:
-    container_name: nashsweeper-frontend
+    container_name: nashsweeper-frontend-pc
     build: ./nashsweeper-front
     restart: always
     ports: 
-      - "4173:4173"
+      - "8082:4173"
     networks:
       - nashsweeper_net
-    
+
+  frontend-ipad:
+    container_name: nashsweeper-frontend-ipad
+    build: ./nashsweeper-front-ipad
+    restart: always
+    ports: 
+      - "8081:4173"
+    networks:
+      - nashsweeper_net
+      
   backend:
     container_name: nashsweeper-backend
     build: ./nashsweeper-backend
