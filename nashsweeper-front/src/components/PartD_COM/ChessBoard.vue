@@ -374,11 +374,15 @@ export default {
   name: "PadChessBoard",
   components: {},
   data() {
+    var arrBR = [];
+    var arrNE = [];
     const store = NsStore();
     const { NEcounter, BRcounter, time } = storeToRefs(store);
     const gameOverStr = '';
     return {
-      NEcounter, BRcounter, gameOverStr, time,
+      // arrBR: ,
+
+      NEcounter, BRcounter, gameOverStr, time, arrBR, arrNE,
       is0: [false, false, false], is1: [false, false, false], is2: [false, false, false], is3: [false, false, false], is4: [false, false, false], is5: [false, false, false], is6: [false, false, false], is7: [false, false, false],
       is8: [false, false, false], is9: [false, false, false], is10: [false, false, false], is11: [false, false, false], is12: [false, false, false], is13: [false, false, false], is14: [false, false, false], is15: [false, false, false],
       is16: [false, false, false], is17: [false, false, false], is18: [false, false, false], is19: [false, false, false], is20: [false, false, false], is21: [false, false, false], is22: [false, false, false], is23: [false, false, false],
@@ -411,12 +415,12 @@ export default {
       this.is0 = [false, false, true]
       this.is1 = [true, false, false]
       this.is2 = [true, false, false]
-      this.is3 = [true, false, false]
+      this.is3 = [false, false, true]
       this.is4 = [true, false, false]
       this.is5 = [true, false, false]
       this.is6 = [true, false, false]
       this.is7 = [true, false, false]
-      this.BRcounter += 1
+
     },
     color1: function () {
       this.is1 = [true, false, false]
@@ -433,7 +437,7 @@ export default {
       this.is43 = [true, false, false]
       this.is51 = [true, false, false]
       this.is59 = [true, false, false]
-      this.BRcounter += 1
+
     },
     color4: function () {
       this.is4 = [true, false, false]
@@ -458,11 +462,11 @@ export default {
       this.is9 = [true, false, false]
       this.is10 = [false, false, true]
       this.is11 = [true, false, false]
-      this.is12 = [true, false, false]
+      this.is12 = [false, false, true]
       this.is13 = [true, false, false]
       this.is14 = [true, false, false]
       this.is15 = [true, false, false]
-      this.BRcounter += 1
+
     },
     color11: function () {
       this.is11 = [true, false, false]
@@ -470,13 +474,13 @@ export default {
     color12: function () {
       this.is4 = [true, false, false]
       this.is12 = [false, false, true]
-      this.is20 = [true, false, false]
+      this.is20 = [false, false, true]
       this.is28 = [true, false, false]
       this.is36 = [true, false, false]
       this.is44 = [true, false, false]
       this.is52 = [true, false, false]
       this.is60 = [true, false, false]
-      this.BRcounter += 1
+
     },
     color13: function () {
       this.is13 = [true, false, false]
@@ -508,8 +512,8 @@ export default {
       this.is20 = [false, false, true]
       this.is21 = [true, false, false]
       this.is22 = [true, false, false]
-      this.is23 = [true, false, false]
-      this.BRcounter += 1
+      this.is23 = [false, false, true]
+
     },
     color21: function () {
       this.is21 = [true, false, false]
@@ -526,7 +530,7 @@ export default {
       this.is47 = [true, false, false]
       this.is55 = [true, false, false]
       this.is63 = [true, false, false]
-      this.BRcounter += 1
+
     },
     color24: function () {
       this.is24 = [true, false, false]
@@ -556,10 +560,10 @@ export default {
       this.is13 = [true, false, false]
       this.is21 = [true, false, false]
       this.is61 = [true, false, false]
-      this.is37 = [true, false, false]
-      this.is45 = [true, false, false]
+      this.is37 = [false, false, true]
+      this.is45 = [false, false, true]
       this.is53 = [true, false, false]
-      this.NEcounter += 1
+
     },
     color30: function () {
       this.is30 = [true, false, false]
@@ -591,7 +595,7 @@ export default {
       this.is37 = [false, false, true]
       this.is38 = [true, false, false]
       this.is39 = [true, false, false]
-      this.BRcounter += 1
+
     },
     color38: function () {
       this.is38 = [true, false, false]
@@ -612,7 +616,7 @@ export default {
       this.is41 = [false, false, true]
       this.is49 = [true, false, false]
       this.is57 = [true, false, false]
-      this.BRcounter += 1
+
     },
     color42: function () {
       this.is42 = [true, false, false]
@@ -625,14 +629,14 @@ export default {
     },
     color45: function () {
       this.is40 = [true, false, false]
-      this.is41 = [true, false, false]
+      this.is41 = [false, false, true]
       this.is42 = [true, false, false]
       this.is43 = [true, false, false]
       this.is44 = [true, false, false]
       this.is45 = [false, false, true]
       this.is46 = [true, false, false]
       this.is47 = [true, false, false]
-      this.BRcounter += 1
+
     },
     color46: function () {
       this.is46 = [true, false, false]
@@ -641,7 +645,7 @@ export default {
       this.is47 = [true, false, false]
     },
     color48: function () {
-      this.is0 = [true, false, false]
+      this.is0 = [false, false, true]
       this.is8 = [true, false, false]
       this.is16 = [true, false, false]
       this.is24 = [true, false, false]
@@ -649,13 +653,13 @@ export default {
       this.is40 = [true, false, false]
       this.is48 = [false, false, true]
       this.is56 = [true, false, false]
-      this.BRcounter += 1
+
     },
     color49: function () {
       this.is49 = [true, false, false]
     },
     color50: function () {
-      this.is48 = [true, false, false]
+      this.is48 = [false, false, true]
       this.is49 = [true, false, false]
       this.is50 = [false, false, true]
       this.is51 = [true, false, false]
@@ -663,7 +667,7 @@ export default {
       this.is53 = [true, false, false]
       this.is54 = [true, false, false]
       this.is55 = [true, false, false]
-      this.BRcounter += 1
+
     },
     color51: function () {
       this.is51 = [true, false, false]
@@ -693,16 +697,15 @@ export default {
       this.is59 = [true, false, false]
       this.is60 = [true, false, false]
       this.is61 = [true, false, false]
-      this.is62 = [true, false, false]
+      this.is62 = [false, false, true]
       this.is63 = [true, false, false]
       this.is2 = [true, false, false]
-      this.is10 = [true, false, false]
+      this.is10 = [false, false, true]
       this.is18 = [true, false, false]
       this.is26 = [true, false, false]
       this.is34 = [true, false, false]
       this.is42 = [true, false, false]
-      this.is50 = [true, false, false]
-      this.NEcounter += 1
+      this.is50 = [false, false, true]
     },
     color59: function () {
       this.is59 = [true, false, false]
@@ -722,7 +725,6 @@ export default {
       this.is46 = [true, false, false]
       this.is54 = [true, false, false]
       this.is62 = [false, false, true]
-      this.BRcounter += 1
     },
     color63: function () {
       this.is63 = [true, false, false]
@@ -733,17 +735,50 @@ export default {
         alert(this.gameOverStr);
       }
     },
+    BRcalc: function () {
+      this.arrBR = [this.is0[2], this.is1[2], this.is2[2], this.is3[2], this.is4[2], this.is5[2], this.is6[2], this.is7[2],
+      this.is8[2], this.is9[2], this.is10[2], this.is11[2], this.is12[2], this.is13[2], this.is14[2], this.is15[2],
+      this.is16[2], this.is17[2], this.is18[2], this.is19[2], this.is20[2], this.is21[2], this.is22[2], this.is23[2],
+      this.is24[2], this.is25[2], this.is26[2], this.is27[2], this.is28[2], this.is29[2], this.is30[2], this.is31[2],
+      this.is32[2], this.is33[2], this.is34[2], this.is35[2], this.is36[2], this.is37[2], this.is38[2], this.is39[2],
+      this.is40[2], this.is41[2], this.is42[2], this.is43[2], this.is44[2], this.is45[2], this.is46[2], this.is47[2],
+      this.is48[2], this.is49[2], this.is50[2], this.is51[2], this.is52[2], this.is53[2], this.is54[2], this.is55[2],
+      this.is56[2], this.is57[2], this.is58[2], this.is59[2], this.is60[2], this.is61[2], this.is62[2], this.is63[2]];
+      this.BRcounter = 0;
+      for (var i = 0; i < this.arrBR.length; i++) {
+        if (this.arrBR[i] == true) {
+          this.BRcounter++;
+        }
+      }
+    },
+    NEcalc: function () {
+      this.arrNE = [this.is0[1], this.is1[1], this.is2[1], this.is3[1], this.is4[1], this.is5[1], this.is6[1], this.is7[1],
+      this.is8[1], this.is9[1], this.is10[1], this.is11[1], this.is12[1], this.is13[1], this.is14[1], this.is15[1],
+      this.is16[1], this.is17[1], this.is18[1], this.is19[1], this.is20[1], this.is21[1], this.is22[1], this.is23[1],
+      this.is24[1], this.is25[1], this.is26[1], this.is27[1], this.is28[1], this.is29[1], this.is30[1], this.is31[1],
+      this.is32[1], this.is33[1], this.is34[1], this.is35[1], this.is36[1], this.is37[1], this.is38[1], this.is39[1],
+      this.is40[1], this.is41[1], this.is42[1], this.is43[1], this.is44[1], this.is45[1], this.is46[1], this.is47[1],
+      this.is48[1], this.is49[1], this.is50[1], this.is51[1], this.is52[1], this.is53[1], this.is54[1], this.is55[1],
+      this.is56[1], this.is57[1], this.is58[1], this.is59[1], this.is60[1], this.is61[1], this.is62[1], this.is63[1]];
+      this.NEcounter = 0;
+      for (var i = 0; i < this.arrNE.length; i++) {
+        if (this.arrNE[i] == true) {
+          this.NEcounter++;
+        }
+      }
+    }
   },
   mounted() {
     // execute every 1 s
     this.timer = setInterval(() => {
-      this.GameOver()
-    }, 1000);
-
+      this.BRcalc();
+      this.NEcalc();
+      this.GameOver();
+    }, 2000);
   },
 }
 </script>
-  
+
 
 
 
