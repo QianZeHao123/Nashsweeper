@@ -488,6 +488,7 @@ export default {
                 index += 8;
             }
             index = cindex;
+            index = index - index % 8;
             for (var i = 0; i < 8; i++) {
                 if (this.ccStatus[index] == false) {
                     // this.cc[index] = [true, false, false];
