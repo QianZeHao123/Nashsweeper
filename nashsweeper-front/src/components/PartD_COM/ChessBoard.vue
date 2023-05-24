@@ -418,7 +418,7 @@
 
 <script>
 import { CellColorDataInit } from './CheckerboardCom/CellColor.js';
-import { ChessMock } from './CheckerboardCom/testGame.js';
+import { ChessMock, NELstMock, BRP1Mock, BRP2Mock } from './CheckerboardCom/testGame.js';
 import { NsStore } from "../../store/index.js";
 import { storeToRefs } from "pinia";
 
@@ -427,15 +427,15 @@ export default {
     components: {},
     data() {
         const store = NsStore();
-        const { NEcounter, BRcounter, time } = storeToRefs(store);
+        const { NEcounter, BRcounter, time, NEset, BRset, Userset } = storeToRefs(store);
         const gameOverStr = '';
         // cc[x][0] Red, cc[x][1] Blue, cc[x][2] Green
         // cc[0][1] = true
         const cc = CellColorDataInit;
         const cm = ChessMock;
-        const NELst = [29, 58];
-        const BRP1 = [3, 12, 23, 41, 48, 62];
-        const BRP2 = [0, 10, 20, 37, 45, 50];
+        const NELst = NELstMock;
+        const BRP1 = BRP1Mock;
+        const BRP2 = BRP2Mock
         const ccStatus = [false, false, false, false, false, false, false, false,
             false, false, false, false, false, false, false, false,
             false, false, false, false, false, false, false, false,
@@ -445,7 +445,7 @@ export default {
             false, false, false, false, false, false, false, false,
             false, false, false, false, false, false, false, false]
         return {
-            cc, cm, NELst, BRP1, BRP2, ccStatus, NEcounter, BRcounter, gameOverStr, time,
+            cc, cm, NELst, BRP1, BRP2, ccStatus, NEcounter, BRcounter, gameOverStr, time, NEset, BRset, Userset
         }
     },
     methods: {
@@ -505,16 +505,20 @@ export default {
             console.log(str);
             if (this.NELst.includes(index)) {
                 this.cNE(index);
+                this.NEset.push(index);
             }
             else if (this.BRP1.includes(index)) {
                 this.cBRP1(index);
+                this.BRset.push(index);
             }
             else if (this.BRP2.includes(index)) {
                 this.cBRP2(index);
+                this.BRset.push(index);
             }
             else {
                 this.cc[index] = [true, false, false]
             }
+            this.Userset.push(index);
         },
         GameOver: function () {
             if (this.NEcounter == 2) {
