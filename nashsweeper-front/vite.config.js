@@ -1,7 +1,7 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 // deal with CORS
-import BackendServerInfo from './BackendServerInfo.json'
+import BackendServerInfo from "./BackendServerInfo.json";
 
 // https://vitejs.dev/config/
 export default defineConfig({
