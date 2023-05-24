@@ -64,3 +64,7 @@ export let ChessMock = [
   [100, 14],
   [68, 53],
 ];
+
+export const NELstMock = [29, 58];
+export const BRP1Mock = [3, 12, 23, 41, 48, 62];
+export const BRP2Mock = [0, 10, 20, 37, 45, 50];
