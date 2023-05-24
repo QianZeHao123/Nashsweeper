@@ -36,8 +36,7 @@
     <div class="flex justify-center items-center">
         <div class="grid grid-cols-2 gap-3 h-1/4">
             <div>
-                <a class="flex justify-center items-center btn btn-sm px-8"
-                    href="http://198.74.121.61:803">Request</a>
+                <a class="flex justify-center items-center btn btn-sm px-8" href="http://198.74.121.61:803">Request</a>
             </div>
             <div><button class="flex justify-center items-center btn btn-sm px-8">Play Again</button></div>
         </div>
@@ -45,16 +44,16 @@
 </template>
 
 <script>
-import axios from 'axios'
+import axios from 'axios';
+// if fail linking to the backend server, show the Mock data
+import { RatingData } from './PlayerRateMockData/RatingMockData.js'
 export default {
     name: "PlayerRate",
     components: {},
     data() {
+        const rd = RatingData
         return {
-            PlayerInfo: [
-                { index: 'Link', PlayerID: "To", TotalStrategies: 'Backend', Time: 'Fail' },
-                { index: 'Check', PlayerID: "The", TotalStrategies: 'Server', Time: 'Again' },
-            ],
+            PlayerInfo: rd
         }
     },
     methods: {
@@ -76,7 +75,9 @@ export default {
                 })
                 .catch(function (error) {
                     // 处理错误情况
-                    console.log(error);
+                    // console.log(error);
+                    console.log(error.message);
+                    
                 })
         },
     },
@@ -86,6 +87,4 @@ export default {
 }
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
