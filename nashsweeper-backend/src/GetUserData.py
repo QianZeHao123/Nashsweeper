@@ -52,6 +52,5 @@ def get_user_rank():
          'TotalStrategies': '...', 'Time': '...'},
         {'index': '...', 'PlayerID': '...',
          'TotalStrategies': '...', 'Time': '...'},
-
     ]
     return user_rank
