@@ -4,9 +4,9 @@ WORKDIR /app
 
 COPY requirements.txt requirements.txt
 
-RUN pip3 install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+RUN pip3 install -r requirements.txt
+# RUN pip3 install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 
-# RUN pip3 install -r requirements.txt
 COPY . .
 
 ENV FLASK_APP=src

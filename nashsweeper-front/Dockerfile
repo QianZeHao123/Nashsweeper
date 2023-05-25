@@ -5,7 +5,8 @@ WORKDIR /app
 # COPY ["package.json", "package-lock.json*", "./"]
 COPY . .
 
-RUN npm install --registry=http://registry.npmmirror.com
+RUN npm install
+# RUN npm install --registry=http://registry.npmmirror.com
 
 RUN npm run build
 
