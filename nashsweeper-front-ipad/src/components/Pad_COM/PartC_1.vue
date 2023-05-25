@@ -152,6 +152,6 @@ export default {
   
 <style scoped>
 .chessbtn-blue {
-  background-color: #3b82f6;
+  background-color: rgba(0, 0, 255, 0.678);
 }
 </style>

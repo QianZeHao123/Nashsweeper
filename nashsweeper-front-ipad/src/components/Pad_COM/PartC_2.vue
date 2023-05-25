@@ -103,7 +103,7 @@
       </div>
     </div>
 
-    <div class="text-sm text-center">TThis is No.{{ BestResponse_num }} Best Response</div>
+    <div class="text-sm text-center">This is No.{{ BestResponse_num }} Best Response</div>
   </div>
 </template>
   
@@ -147,7 +147,7 @@ export default {
   
 <style scoped>
 .chessbtn-green {
-  background-color: #22c55e;
+  background-color: rgba(0, 255, 0, 0.493);
 }
 </style>
   

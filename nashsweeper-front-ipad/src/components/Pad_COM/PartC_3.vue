@@ -103,7 +103,7 @@
       </div>
     </div>
 
-    <div class="text-sm text-center">TThis is No.{{ User_num }} Best Response</div>
+    <div class="text-sm text-center">This is No.{{ User_num }} User Step</div>
   </div>
 </template>
   
