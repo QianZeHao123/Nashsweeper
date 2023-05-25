@@ -118,9 +118,9 @@ export default {
   components: {},
   data() {
     const store = NsStore();
-    const { time, NEcounter, NashEquilibrium_num } = storeToRefs(store);
+    const { time, NEcounter, NashEquilibrium_num, NEset } = storeToRefs(store);
     // const second = storeToRefs(store.time.second)
-    const NEset = [-1, 29, 58];
+    // const NEset = [-1, 29, 58];
     const NEstep = new Array(64).fill(false);
     return {
       time,
