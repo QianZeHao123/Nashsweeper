@@ -20,6 +20,11 @@ export const NsStore = defineStore("NashSweeperStore", {
       NashEquilibrium_num: 0,
       BestResponse_num_left: 0,
       BestResponse_num_right: 0,
+      BestResponse_num: 0,
+      User_num: 0,
+      NEset: [-1],
+      BRset: [-1],
+      Userset: [-1],
     };
   },
   // getters: {
