@@ -46,6 +46,9 @@ def id_lst_gen(strategy_combination):
 def valst_gen(N):
     valst_pre = []
     for _ in range(N):
+        str_atom = 'Strategy' + str(_) + ' ' + 'NUMBER'
+        valst_pre.append(str_atom)
+    for _ in range(N):
         str_atom = 'Payoff' + str(_) + ' ' + 'NUMBER'
         valst_pre.append(str_atom)
     valst = ", ".join(valst_pre)
@@ -74,9 +77,14 @@ class SQLLiteProcess(object):
 
     def insert_data(DBname, TBname, N, Dataset):
         valst_pre = []
+
+        for _ in range(N):
+            str_atom = 'Strategy' + str(_) + ' '
+            valst_pre.append(str_atom)
         for _ in range(N):
             str_atom = 'Payoff' + str(_) + ' '
             valst_pre.append(str_atom)
+
         valst = ", ".join(valst_pre)
         insertTab = 'id, ' + valst
         DBname += '.db'
@@ -113,7 +121,6 @@ class RegValCalc(object):
     # calculate the regret value of each strategy
 
 # =================================================================
-
 
 
 # ========================TEST DATABASE========================
