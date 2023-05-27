@@ -3,6 +3,8 @@ from flask import Flask
 # import src.db as db
 import src.UploadPage as UploadPage
 import src.GetUserData as GetUserData
+from src.nashsweeper_core_engine.CoreCalcOptForGame import CoreCalc
+import random
 
 
 def create_app(test_config=None):
@@ -30,10 +32,33 @@ def create_app(test_config=None):
     def hello():
         return 'Hello, World!'
 
+    @app.route('/GetGamedata')
+    def GetGamedata():
+        NE_num = 0
+        while NE_num == 0:
+            test_strategy_matrix = [random.randint(0, 100) for _ in range(128)]
+            strategy_matrix = test_strategy_matrix
+            regP1, regP2 = CoreCalc.regCalc(strategy_matrix)
+            # calculate the regret value of regP1 and regP2
+            print(regP1)
+            print(regP2)
+            # output the nash equilibrium list and best response of player 1 and player 2
+            NE, BRP1, BRP2 = CoreCalc.BRNElst(regP1, regP2)
+            NE_num = len(NE)
+            print(NE)
+            print(BRP1)
+            print(BRP2)
+        GameData = {
+            'Checkerboard': test_strategy_matrix,
+            'NE': [int(_) for _ in NE],
+            'BRP1': [int(_) for _ in BRP1],
+            'BRP2': [int(_) for _ in BRP2]
+        }
+        # return test_strategy_matrix, NE, BRP1, BRP2
+        return GameData
     # ------------------------------------------------------------------------------
     # from . import db
     # db.init_app(app)
-
     # from . import UploadPage
     app.register_blueprint(UploadPage.bp)
     # from . import GetUserData
