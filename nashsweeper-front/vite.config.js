@@ -11,10 +11,18 @@ export default defineConfig({
       // UploadPage CORS
       "/UploadPage": {
         // target: "http://127.0.0.1:5000",
-        target: "BackendServerInfo.backendIP",
+        target: BackendServerInfo.backendIP,
         changeOrigin: true,
         pathRewrite: {
           "^/UploadPage": "/UploadPage",
+        },
+      },
+      "/GetGameData": {
+        // target: "http://127.0.0.1:5000",
+        target: BackendServerInfo.backendIP,
+        changeOrigin: true,
+        pathRewrite: {
+          "^/GetGameData": "/GetGameData",
         },
       },
       // GetUserData CORS
