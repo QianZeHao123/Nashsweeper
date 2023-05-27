@@ -6,7 +6,7 @@ import numpy
 bp = Blueprint('GetGameData', __name__, url_prefix='/GetGameData')
 
 
-@bp.route('/')
+@bp.route('/test')
 def GetGamedata():
     NE_num = 0
     while NE_num == 0:
