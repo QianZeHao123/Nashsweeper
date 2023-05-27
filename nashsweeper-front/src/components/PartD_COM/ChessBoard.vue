@@ -417,6 +417,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 import { CellColorDataInit } from './CheckerboardCom/CellColor.js';
 import { ChessMock, NELstMock, BRP1Mock, BRP2Mock } from './CheckerboardCom/testGame.js';
 import { NsStore } from "../../store/index.js";
@@ -435,7 +436,7 @@ export default {
         const cm = ChessMock;
         const NELst = NELstMock;
         const BRP1 = BRP1Mock;
-        const BRP2 = BRP2Mock
+        const BRP2 = BRP2Mock;
         const ccStatus = [false, false, false, false, false, false, false, false,
             false, false, false, false, false, false, false, false,
             false, false, false, false, false, false, false, false,
@@ -449,6 +450,26 @@ export default {
         }
     },
     methods: {
+        getGameData: function () {
+            var that = this;
+            axios({
+                method: 'get',
+                // url: '/GetGameData'
+                url: '/GetGameData/test'
+            })
+                .then(function (response) {
+                    console.log(response.data);
+                    that.cm = response.data.Checkerboard;
+                    that.NELst = response.data.NE;
+                    that.BRP1 = response.data.BRP1;
+                    that.BRP2 = response.data.BRP1;
+                })
+                .catch(function (error) {
+                    // console.log(error);
+                    console.log(error.message);
+
+                })
+        },
         // if Player1's strategy is best response, color the column cell with green
         cBRP1: function (index) {
             var cindex = index;
@@ -521,7 +542,7 @@ export default {
             this.Userset.push(index);
         },
         GameOver: function () {
-            if (this.NEcounter == 2) {
+            if (this.NEcounter == this.NELst.length) {
                 this.gameOverStr = "Game Over, you have found all the Nash Equilibrium and " + this.BRcounter + " Best Response, " + "You spent a total of " + +this.time.hour + ":" + this.time.minute + ":" + this.time.second;
                 alert(this.gameOverStr);
             }
@@ -800,6 +821,7 @@ export default {
         },
     },
     mounted() {
+        this.getGameData();
         // execute every 1 s
         this.timer = setInterval(() => {
             this.BRcalc();
