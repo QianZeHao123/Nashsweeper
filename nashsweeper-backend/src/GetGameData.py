@@ -1,5 +1,5 @@
 from flask import Blueprint
-from src.nashsweeper_core_engine.CoreCalcOptForGame import CoreCalc
+from .nashsweeper_core_engine.CoreCalcOptForGame import CoreCalc
 import random
 import numpy
 
