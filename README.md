@@ -58,35 +58,47 @@ sudo docker-compose down
 ### Frontend User Interface Render
 ```mermaid
 graph LR
-App[App.vue]--Router.js-->HomePage(HomePage/iPad)
+App[App.vue]--Router.js-->HomePage(HomePage of PC)
 HomePage-->SideBar(SideBar)
 HomePage-->DataBarShow(DataBarShow)
 SideBar--VueComponent-->PartA[PartA]
 SideBar--VueComponent-->PartB[PartB]
-SideBar--VueComponent-->PartC[PartC]
-DataBarShow--VueComponent-->PartD[PartD]
-DataBarShow--VueComponent-->PartE[PartE]
-DataBarShow--user_NE-->PartC-1[Part C-1]
-DataBarShow--user_BR-->PartC-2[Part C-2]
-DataBarShow--user_operation-->PartC-3[Part C-3]
 PartB--TimeCom-->TimeCounterCom
 PartB--NECom-->NEcounter
 PartB--BRCom-->BRcounter
-PartE--GetPlayerRank-->PlayerRate
+SideBar--VueComponent-->PartC[PartC]
+DataBarShow--user_NE-->PartC-1[Part C-1]
+DataBarShow--user_BR-->PartC-2[Part C-2]
+DataBarShow--user_operation-->PartC-3[Part C-3]
+DataBarShow--VueComponent-->PartD[PartD]
+PartD--GameMainPart-->Checkerboard[Checkerboard]
+DataBarShow--VueComponent-->PartE[PartE]
 PartE--Gitee, Github Link-->ProjLink
+PartE--GetPlayerRank-->PlayerRate
+PartC-1--vueCom-->NEReview[NE Review]
+PartC-2--vueCom-->BRReview[BR Review]
+PartC-3--vueCom-->UserLog[User Log]
+App--Router.js-->iPad(iPad)
+iPad-->iPadCom[iPadCom]
+iPadCom-->ComList[Components similar to the PC side]
 ```
 
 ### Backend DataProcess
+
 ```mermaid
 sequenceDiagram
-    participant Backend Server
-    participant Frontend
-    participant NashsweeperPlayer
-    NashsweeperPlayer -->> Backend Server: Upload Game Data
-    Backend Server ->> NashsweeperPlayer: Template Render Page: Return Nashsweeper
-    loop Load Tricker
-        Backend Server -->> Backend Server: Load Game Data
+    participant Nashsweeper_User
+    participant Backend_Server
+    participant Frontend_server
+
+    Nashsweeper_User ->> Frontend_server: Visit http://<nashsweeperIP>:8082 through browser, request NS UI and Game Data
+    Frontend_server -->> Backend_Server: Axios(method: "GET"), GameData, UserRank, etc.
+    loop Generate game data
+        Backend_Server -->> Backend_Server: if NE.length == 0
     end
-    Backend Server ->> Frontend: JsonData: Player Rank
-    Frontend -->> NashsweeperPlayer: Player Rank
+    Backend_Server ->> Frontend_server: Return GameData and UserRank
+    Frontend_server ->> Nashsweeper_User: Rendering the UI and GameData, UserRank
+    loop User Playing the Game
+        Nashsweeper_User -->> Nashsweeper_User: if NEset.length != NE.length
+    end
 ```
