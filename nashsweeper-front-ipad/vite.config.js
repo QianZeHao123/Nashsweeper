@@ -26,6 +26,14 @@ export default defineConfig({
           "^/GetUserData": "/GetUserData",
         },
       },
+      "/GetGameData": {
+        // target: "http://127.0.0.1:5000",
+        target: BackendServerInfo.backendIP,
+        changeOrigin: true,
+        pathRewrite: {
+          "^/GetGameData": "/GetGameData",
+        },
+      },
     },
   },
 });
