@@ -542,7 +542,7 @@ export default {
       this.Userset.push(index);
     },
     GameOver: function () {
-      if (this.NEcounter == 2) {
+      if (this.NEcounter == this.NELst.length) {
         this.gameOverStr = "Game Over, you have found all the Nash Equilibrium and " + this.BRcounter + " Best Response, " + "You spent a total of " + +this.time.hour + ":" + this.time.minute + ":" + this.time.second;
         alert(this.gameOverStr);
       }
