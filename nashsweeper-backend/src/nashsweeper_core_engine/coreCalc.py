@@ -71,6 +71,7 @@ class SQLLiteProcess(object):
             TBname + '(' + id_info + valst + ')'
         cursor.execute('DROP TABLE IF EXISTS ' + TBname)
         cursor.execute(executeStr)
+        print('Create database successfully')
         conn.commit()
         conn.close()
     # insert data(id, Payoff1, Payoff2,..., PayoffN) into database
