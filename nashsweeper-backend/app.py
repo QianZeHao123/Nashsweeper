@@ -16,4 +16,4 @@ if __name__ == '__main__':
     print("\033[31m Initialize Database \033[0m")
     user_Record = DBprocess.createDB(
         './instance/User.db', 'Record', '(UserName INTEGER, Time INTEGER, STEP INTEGER)')
-    # app.run(debug=True)
+    app.run(debug=True)
