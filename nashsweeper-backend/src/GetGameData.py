@@ -3,10 +3,10 @@ from .nashsweeper_core_engine.CoreCalcOptForGame import CoreCalc
 import random
 import numpy
 
-bp = Blueprint('GetGameData', __name__, url_prefix='/GetGameData')
+bp = Blueprint('GetGameData', __name__, url_prefix='/api/GetGameData')
 
 
-@bp.route('/test')
+@bp.route('/')
 def GetGamedata():
     NE_num = 0
     while NE_num == 0:
@@ -19,16 +19,18 @@ def GetGamedata():
         # output the nash equilibrium list and best response of player 1 and player 2
         NE, BRP1, BRP2 = CoreCalc.BRNElst(regP1, regP2)
         NE_num = len(NE)
-    
-    
-    strategy_matrix = numpy.array(strategy_matrix).reshape(64,2)
+
+    strategy_matrix = numpy.array(strategy_matrix).reshape(64, 2)
     strategy_matrix = strategy_matrix.tolist()
 
+    print('strategy data:')
     print(strategy_matrix)
+    print('Nash Equilibrium List: ')
     print(NE)
+    print('Best Response of Player 1: ')
     print(BRP1)
+    print('Best Response of Player 2: ')
     print(BRP2)
-    
 
     GameData = {
         'Checkerboard': strategy_matrix,

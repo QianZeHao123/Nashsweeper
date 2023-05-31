@@ -1,9 +1,9 @@
 from flask import Blueprint
 
-bp = Blueprint('GetUserData', __name__, url_prefix='/GetUserData')
+bp = Blueprint('GetUserData', __name__, url_prefix='/api/GetUserData')
 
 
-@bp.route('/test')
+@bp.route('/')
 def get_user_rank():
     user_rank = [
         {'index': 1, 'PlayerID': 'CIEG',
