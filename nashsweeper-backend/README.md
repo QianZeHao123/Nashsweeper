@@ -45,3 +45,22 @@ $ flask run
 $ sudo docker build -t nashsweeper-backend . 
 $ sudo docker run --name nashsweeper-backend -d -p 5000:5000 nashsweeper-backend:latest
 ```
+## 0x03 Backend Programme Architecture
+```mermaid
+graph LR
+app(app.py)
+GameData[bp/GetGameData]
+UserData[bp/GetUserData]
+UploadPage[bp/UploadPage]
+Checkerboard[Checkerboard Data]
+NE[Nash Equilibrium]
+BRP1[Best Response of Player 1]
+BRP2[Best Response of Player 2]
+UR[User Rank]
+app --> GameData --> Checkerboard
+GameData --> NE
+GameData --> BRP1
+GameData --> BRP2
+app --> UserData --> UR
+app --> UploadPage
+```
