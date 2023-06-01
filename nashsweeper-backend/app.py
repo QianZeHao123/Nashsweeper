@@ -1,19 +1,27 @@
 from flask import Flask
 from src import GetUserData
 from src import GetGameData
-from src.utils import DBprocess
+from src.Backendnitialization import Initialization
+from src import addUserRec
 app = Flask(__name__)
 
-# @app.route('/')
-# def hello_world():
-#     return 'Hello, World!'
+
+# @app.route('/api/addUserRec')
+# def getUserRecord():
+#     UserName = request.args.get('UserName')
+#     Time = request.args.get('Time')
+#     STEP = request.args.get('STEP')
+#     print(UserName)
+#     print(Time)
+#     print(int(STEP)+1)
+#     return 'Hello '+UserName
+
 
 app.register_blueprint(GetUserData.bp)
 app.register_blueprint(GetGameData.bp)
+app.register_blueprint(addUserRec.bp)
 
 if __name__ == '__main__':
-
-    print("\033[31m Initialize Database \033[0m")
-    user_Record = DBprocess.createDB(
-        './instance/User.db', 'Record', '(UserName INTEGER, Time INTEGER, STEP INTEGER)')
+    # Backend program initialization
+    Initialization()
     app.run(debug=True)
