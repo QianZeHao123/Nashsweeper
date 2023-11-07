@@ -1,0 +1,7 @@
+{
+    "backendIP": "http://127.0.0.1:5000/",
+    "nodebridgeIP": "http://127.0.0.1:3000/",
+    "backendName": "Server Name",
+    "backendOS": "Server OS",
+    "backendCapacity": "Server Cap"
+}
