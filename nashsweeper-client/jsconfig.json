@@ -1,0 +1,6 @@
+{
+    "include": [
+        "./src/**/*",
+        "bak.App.vue.js"
+    ]
+}
