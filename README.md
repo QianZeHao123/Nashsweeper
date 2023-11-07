@@ -4,7 +4,7 @@ Nash equilibrium is a core concept of game theory. This repo shows a playful int
 ![](nashsweeper-front/public/JohnNash.svg)
 ## 0x01 How to use?
 ### In dev mode
-* If you want to run this project, you should start the backend service firstly by changing your terminal path to [nashsweeper-banckend](./nashsweeper-backend/) and reading the [readme file](nashsweeper-backend/README.md) carefully. Then you should run the frontend service by changing your disk to [nashsweeper-front](./nashsweeper-front/) and follow the [readme file](nashsweeper-front/README.md) step by step.
+* If you want to run this project, you should start the backend service firstly by changing your terminal path to [nashsweeper-server](./nashsweeper-server/) and reading the [readme file](nashsweeper-server/README.md) carefully. Then you should run the frontend service by changing your disk to [nashsweeper-front](./nashsweeper-client/) and follow the [readme file](nashsweeper-client/README.md) step by step.
 * What deserves your attention most is that both the backend and frontend services ports cannot be taken by other applications, or you won't be able to run it correctly.
 ### In Docker Micro-service mode
 **This instruction only applies to Linux!!!**
@@ -26,13 +26,14 @@ sudo apt install docker-compose git
 git clone https://gitee.com/qian_zehao/nashsweeper.git
 cd path/to/nashsweeper
 ```
-* STEP 4: Edit the profile for frontend to backend
+* STEP 4: Edit the profile for client end to server end
 ```shell
 # edit the two belowing profile 
-# nashsweeper/nashsweeper-front/BackendServerInfo.json
-# nashsweeper/nashsweeper-front-ipad/BackendServerInfo.json
+# nashsweeper/nashsweeper-client/BackendServerInfo.json
+# nashsweeper/nashsweeper-client-ipad/BackendServerInfo.json
 {
     "backendIP": "http://127.0.0.1:5000/",
+    "nodebridgeIP": "http://127.0.0.1:3000/",
     # change the backendIP from 127.0.0.1:5000 to your IP address
     # For example: In my home, my device IP is 192.168.1.104
     # and my backend port is 5000
