@@ -2,30 +2,30 @@ version: '3'
 
 services:
 
-  frontend:
-    container_name: nashsweeper-frontend-pc
-    build: ./nashsweeper-front
+  client:
+    container_name: nashsweeper-frontend
+    build: ./nashsweeper-client
     restart: always
-    ports: 
-      - "8082:4173"
+    ports:
+      - "8080:4173"
     networks:
       - nashsweeper_net
 
-  frontend-ipad:
-    container_name: nashsweeper-frontend-ipad
-    build: ./nashsweeper-front-ipad
+  server:
+    container_name: nashsweeper-backend
+    build: ./nashsweeper-server
     restart: always
-    ports: 
-      - "8081:4173"
+    ports:
+      - "5000:5000"
     networks:
       - nashsweeper_net
-      
-  backend:
-    container_name: nashsweeper-backend
-    build: ./nashsweeper-backend
+
+  transbridge:
+    container_name: nashsweeper-middleware
+    build: ./nashsweeper-middleware
     restart: always
-    ports: 
-      - "5000:5000"
+    ports:
+      - "3000:3000"
     networks:
       - nashsweeper_net
 
