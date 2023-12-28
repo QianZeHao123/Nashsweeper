@@ -475,7 +475,7 @@ export default {
             axios({
                 method: 'get',
                 // url: '/GetGameData'
-                url: '/api/GetGameData'
+                url: '/api/GetGameData/'
             })
                 .then(function (response) {
                     console.log(response.data);
