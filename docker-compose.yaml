@@ -7,7 +7,7 @@ services:
     build: ./nashsweeper-client
     restart: always
     ports:
-      - "8080:4173"
+      - "8080:80"
     networks:
       - nashsweeper_net
 
