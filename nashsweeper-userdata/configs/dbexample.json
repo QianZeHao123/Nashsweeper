@@ -1,0 +1,7 @@
+{
+  "DBUsername": "<DB User Name>",
+  "DBPassword": "<DB password>",
+  "DBHost": "<IP address of DB>",
+  "DBPort": "<DBPort>",
+  "DBName": "<Your DBName>"
+}
